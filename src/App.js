@@ -24,7 +24,7 @@ function App() {
         </header>
         <NavBar show={showNav} />
 
-        <div className='main'>
+        <div className={showNav ? 'main content-shift' : 'main'}>
           <Routes>
             <Route path="/myaccount" element={<MyAccount />} />
             <Route path="/emergencyprocedures" element={<EmergencyProcedures />} />

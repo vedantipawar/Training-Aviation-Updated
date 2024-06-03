@@ -1,0 +1,54 @@
+.layout {
+    display: grid;
+    height: 100%; /* Full height of the viewport */
+    grid-template-rows: 1fr 1fr; /* 2/3 height for the first row, 1/3 height for the second row */
+    width: 100%; /* Full width of the container */
+}
+
+.container1 {
+    background-color: #f2f6ff;
+    color: rgb(0, 0, 0); /* For better visibility */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.container2 {
+    background-color: blueviolet;
+    color: white; /* For better visibility */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.date {
+    margin-top: 30px;
+}
+
+.title {
+    margin-top: -20px;
+}
+
+.card {    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 220px; 
+    height: 310px;   
+    padding-left: 150px;    
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: rgb(205, 30, 30);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: 200px
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 70%;
+}
+
+
+
+  
