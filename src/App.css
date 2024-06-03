@@ -8,25 +8,71 @@ body {
   color: aquamarine;
 }
 
+.header {
+  background: #fc0444;
+  width: 240px;
+  position: absolute;
+}
 
+.header {
+  background: #ffffff;
+  color: #000000;
+  width: 280px;
+  position: absolute;  
+  align-items: center;
+  padding: 10px;
+  display: flex;
+}
+
+
+.header.active {
+  background-color: #fc0444;
+  color: rgb(255, 255, 255);
+ 
+}
 
 .SideNav {
+  margin-top: 40px;;
   width: 240px;
   background:#fc0444;  
   position: absolute;
   height: 100vh;
   padding: 0 30px;
+  left: -100%;
   transition: all 1s;
+  align-items: left;
 
 }
 
+.SideNav.active {
+  left: 0;
+}
+
+.logo {
+  width: 50px;
+  height: 20px;
+  padding-left: 15px;
+  color: #fc0444;  
+  
+}
+
+.logo.active {
+  width: 50px;
+  height: 20px;
+  padding-left: 15px;
+  color: aqua;
+}
+
 ul {
-  padding: 0px;
+  margin-top: 100px;
+  padding: 0;
 
 }
 
 ul li {
   list-style-type: none;
+  margin: 5px;
+  margin-left: -20px;
 }
 
 ul li a {
@@ -41,4 +87,13 @@ ul li a {
 ul li a:hover, ul li a:active {
   color: #fc0444;
   background: #ffffff; 
+
+}
+
+.main {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #cf2424;
 }
