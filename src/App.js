@@ -9,6 +9,7 @@ import EmergencyProcedures from './pages/EmergencyProcedures';
 import CFI from './pages/CFI';
 import Scenarios from './pages/Scenarios';
 import CourseDetails from './pages/CourseDetails';
+import NewPage from './pages/NewPage.jsx';
 
 
 function App() {
@@ -28,11 +29,13 @@ function App() {
 
         <div className={showNav ? 'main content-shift' : 'main'}>
           <Routes>
-            <Route path="/" element={<MyAccount />} />
+          <Route path="/" element={<MyAccount />} />
+            <Route path="/myaccount" element={<MyAccount />} />
             <Route path="/emergencyprocedures" element={<EmergencyProcedures />} />
             <Route path="/scenarios" element={<Scenarios />} />
             <Route path="/cfi" element={<CFI />} />
             <Route path="/course/:courseid" element={<CourseDetails />} />
+            <Route path="/new-page" element={<NewPage />} />
           </Routes>
         </div>
       </Router>

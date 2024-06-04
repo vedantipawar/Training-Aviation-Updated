@@ -1,0 +1,201 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    width: 100vw;
+}
+
+.left-container, .right-container {
+    padding: 10px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    /* Optional: for better visibility */
+}
+
+.left-container {
+    margin-left: -20px;
+    flex: 1;
+    padding-right: 40px;
+    background-color: #d1d1d1; /* Optional: for better visibility */
+    align-items: flex-end; /* Align items to the right */
+    text-align: right; /* Align text to the right */
+}
+
+.right-container {
+    
+    flex: 1;
+    background-color: #d1d1d1; /* Optional: for better visibility */
+}
+
+.redstar, .greystar {
+    padding-top: 40px;
+    height: 30px;
+    width: 20px;
+}
+
+.redstar {
+    color: #fe0143;
+}
+
+.greystar{
+    color: #d1d1d1;
+}
+
+.completion-stars {
+    display: flex;
+    align-items: center;
+}
+
+.completion-stars i {
+    margin-right: 5px; /* Optional: space between stars */
+}
+
+.completion-stars span {
+    margin-top: 40px;
+    margin-left: 10px; /* Optional: space between stars and percentage */
+}
+
+.titlesize{
+    margin-top: 10px;
+    font-size: 150%;
+    font-weight: bolder;
+}
+
+.subtitlesize{
+    margin-top: -5px;
+    font-size: 150%;
+}
+
+.courseinfo {
+    margin-top: 20px;
+    text-align: left;
+}
+.textbox {
+    padding: 25px 40px;
+    background-color: #ffffff;
+    height: 70%;
+    width: 70%;
+    border-radius: 15px;
+}
+
+.start-button {
+    margin: 0 140px;
+    padding: 10px 40px;
+    font-size: 16px;
+    background-color: #000;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    align-self: center; /* Centers the button horizontally in the flex container */
+    margin-bottom: 50px; /* Optional: Adds some space between the text and the button */
+    margin-top: 15px;
+}
+
+.circle i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.locked .circle i {
+    color: black;
+}
+
+.rating i {
+    color: red;
+}
+
+.locked .rating i {
+    color: #ccc;
+}
+
+.course-path {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+}
+
+.course-step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.course-step::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -30px;
+    width: 2px;
+    height: 50px;
+    background-color: #ccc;
+    z-index: -1;
+}
+
+.course-step:last-child::after {
+    display: none;
+}
+
+.course-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #f00;
+    border: 5px solid #f00;
+    position: relative;
+    z-index: 1;
+}
+
+.locked-circle {
+    background-color: #ccc;
+}
+
+.start {
+    position: absolute;
+    top: -20px;
+    background: #000;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.course-label {
+    margin-left: 20px;
+    text-align: left;
+}
+
+.rating {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: #000;
+}
+
+.course-name {
+    font-size: 18px;
+    color: #000;
+}
+
+.locked .course-name,
+.locked .rating {
+    color: #ccc;
+}
