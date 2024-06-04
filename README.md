@@ -121,4 +121,19 @@ http://127.0.0.1:5000/api
 
 # Results
 
+- Landing page and My Account Page
+![Screenshot 2024-06-04 074125](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/41a71009-46d3-49b9-b0cc-707e7b921970)
 
+- Only those recent procedurres are being shown whose rating is less than three
+![Screenshot 2024-06-04 074331](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/e7e882a9-c19b-4b3c-b501-e746cb3675dc)
+
+![image](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/642941d5-a412-4e28-a8ab-d8b01210f17a)
+
+- Recent procedure cards land on different page based on what was clicked.
+![Screenshot 2024-06-04 074350](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/4656e0a5-d635-4056-9aa5-9878337c2c6e)
+
+![image](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/d66084ca-1dda-4f6f-9c8a-4f76a8630006)
+
+- Start acts as a button that leads to a new page.
+![Screenshot 2024-06-04 074408](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/6e214706-7aa0-4fd7-9813-e68bb82eb912)
+![image](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/2457b6cd-aba7-46c0-8635-3e43d235ad59)
