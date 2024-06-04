@@ -5,41 +5,23 @@
         "description": "EP",
         "completion": 50,
         "imagepath": "images/EmergencyProcedures.png",
-        "recentProcedures": [
-            {
-                "title": "Procedure 1",
-                "status": "complete",
-                "rating": 5,
-                "information": "Info about Procedure 1"
-            },
-            {
-                "title": "Procedure 2",
-                "status": "not complete",
-                "rating": 4,
-                "information": "Info about Procedure 2"
-            }
-        ]
+        "rpctitle": "Engine Out 1",
+        "status": "complete",
+        "rating": 2,
+        "information": "Info about Procedure 3"
     },
     {
         "courseid": "2",
         "title": "Pre-Flight Procedures",
         "description": "PFP Subheading",
         "completion": 70,
-        "imagepath": "images/PreFlightProcedures.jpg",
-        "recentProcedures": [
-            {
-                "title": "Procedure 3",
-                "status": "complete",
-                "rating": 3,
-                "information": "Info about Procedure 3"
-            },
-            {
-                "title": "Procedure 4",
-                "status": "not complete",
-                "rating": 4.5,
-                "information": "Info about Procedure 4"
-            }
-        ]
+        "imagepath": "images/PreFlightProcedures.jpg",                  
+        "rpctitle": "Engine Fire 2",
+        "status": "complete",
+        "rating": 1,
+        "information": "Info about Procedure 3"
+            
+        
     },
     {
         "courseid": "3",
@@ -47,19 +29,21 @@
         "description": "CFI Subheading",
         "completion": 65,
         "imagepath": "images/CFI.jpg",
-        "recentProcedures": [
-            {
-                "title": "Procedure 5",
-                "status": "complete",
-                "rating": 3,
-                "information": "Info about Procedure 3"
-            },
-            {
-                "title": "Procedure 6",
-                "status": "not complete",
-                "rating": 4.5,
-                "information": "Info about Procedure 4"
-            }
-        ]
+        "rpctitle": "Engine Out 3",
+        "status": "complete",
+        "rating": 3,
+        "information": "Info about Procedure 3"
+    },
+
+    {
+        "courseid": "4",
+        "title": "CFI",
+        "description": "CFI Subheading",
+        "completion": 65,
+        "imagepath": "images/CFI.jpg",
+        "rpctitle": "Engine Out 4",
+        "status": "complete",
+        "rating": 2,
+        "information": "Info about Procedure 4"
     }
 ]

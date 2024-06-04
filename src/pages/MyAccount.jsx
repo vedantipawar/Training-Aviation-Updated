@@ -5,6 +5,7 @@ import 'react-multi-carousel/lib/styles.css';
 import '../Styles/MyAccount.css';
 
 import ImageCards from '../components/ImageCards.jsx';
+import RecentProcedureAllCards from '../components/RecentProcedureAllCards.jsx'
 
 
 
@@ -14,12 +15,12 @@ export default function MyAccount() {
       <div className='container1'>
         <div className='date'><CurrentDate /></div>
         <div className='title'><h1>Procedural Trainer</h1></div>
-        <div className='date'><ImageCards /></div>
+        <div ><ImageCards /></div>
         
       </div>
       <div className='container2'>
-        
-        container 2 NOEW FIA M AKSJ AGJBK
+        <div className='rpctitle'>Recent Procedures</div>
+        <div><RecentProcedureAllCards /></div>
       </div>
     </div>
   );

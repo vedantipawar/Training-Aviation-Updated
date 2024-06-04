@@ -1,0 +1,22 @@
+.srpcard{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 150px; 
+    height: 150px;   
+    margin : 10px;    
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color:     #d7dce4;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.rpcicon-container {
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 40px;
+}
+
+
+
