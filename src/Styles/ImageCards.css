@@ -1,7 +1,8 @@
 .product-carousel {
     position: relative;
     overflow: hidden;
-    padding: 26px;
+    padding: 10px;
+    padding-left: 0px;
 }
 
 .product-container {
@@ -17,11 +18,14 @@
     width: 40px;
     height: 100%;
     position: absolute;
-    top: 0;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Center vertically */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 10; /* Ensure buttons are on top */
 }
 
 .next-btn {
@@ -31,13 +35,11 @@
 .next-btn p,
 .pre-btn p {
     font-size: 50px;
-    background-color: rgba(255, 255, 255, 0.436);
-    box-shadow: 0px 0px 10px 1px black;
-    border-radius: 10px;
+    background-color: transparent; /* No background color */
+    box-shadow: none; /* No box shadow */
+    border-radius: 0; /* No border radius */
     color: rgb(0, 0, 0);
-    width: 50px;
-    height: 50px;
     cursor: pointer;
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
 }
-
-

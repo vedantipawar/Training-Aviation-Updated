@@ -1,70 +1,124 @@
-# Getting Started with Create React App
+# Project Name
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+Creating an aviation app for students to Learn. It is built using React for the front-end and Python Flask for the back-end.
 
-In the project directory, you can run:
+## Key Features
 
-### `npm start`
+- Browse thorugh different Procedural Training.
+- Browse through Recent Procedures
+- Get more information on seleted Procedures and the path of completion
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting Started
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Prerequisites
 
-### `npm test`
+- **Node.js and npm**: Download and install from [Node.js](https://nodejs.org/).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### 1. Set up the backend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Set up Flask**:
+    - Open a terminal (or command prompt on Windows).
+    - Install Flask:
+      ```bash
+      pip install Flask
+      ```
 
-### `npm run eject`
+3. **Set up the backend environment**:
+    - For JavaScript backend with Node.js (optional):**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    - Install Node.js and npm (or yarn) from the official website: https://nodejs.org/
+    - Open a terminal and navigate to the project's root directory.
+    - Install the required dependencies:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    ```bash
+    npm install express
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+#### 2. Set up the frontend
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **Install Node.js and npm**:
+    - Download and install Node.js (which includes npm) from [Node.js](https://nodejs.org/).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. **Set up the frontend environment**:
+    - Navigate to the frontend directory:
+      ```bash
+      cd frontend
+      ```
 
-### Code Splitting
+    - Install the necessary npm packages:
+      ```bash
+      npm install
+      ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. **Start the frontend application**:
+    ```bash
+    npm start
+    ```
 
-### Analyzing the Bundle Size
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Ensure the backend is running:
+    ```bash
+    cd backend
+    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+    cd src
+    node server.js
 
-### Making a Progressive Web App
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+2. Ensure the frontend is running:
+    ```bash
+    cd frontend
+    npm start
+    ```
 
-### Advanced Configuration
+3. Open your browser and go to `http://localhost:3000` to access the application if it doesnt open automatically
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# API Documentation
 
-### Deployment
+## Base URL
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+http://127.0.0.1:5000/api
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 1. Get All Courses
+
+- **Endpoint:** `/api/courses`
+- **Method:** `GET`
+- **Description:** Fetches the list of all courses.
+- **Response:**
+  - **Status:** 200 OK
+  - **Body:** JSON array of courses
+
+### 2. Get All Procedures
+
+- **Endpoint:** `/api/procedures`
+- **Method:** `GET`
+- **Description:** Fetches the list of all procedures with 3 or fewer stars.
+- **Response:**
+  - **Status:** 200 OK
+  - **Body:** JSON array of procedures
+
+### 3. Get Procedure by ID
+
+- **Endpoint:** `/api/procedures/<int:id>`
+- **Method:** `GET`
+- **Description:** Fetches the details of a specific procedure by its ID.
+- **URL Parameters:**
+  - **id:** The ID of the procedure to fetch.
+- **Response:**
+  - **Status:** 200 OK if the procedure is found
+  - **Status:** 404 NOT FOUND if the procedure is not found
+   - **Body:** JSON array of procedures
+
+# Results
+
+

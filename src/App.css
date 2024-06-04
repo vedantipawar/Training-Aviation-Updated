@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto';
-  color: aquamarine;
+  color: rgb(255, 255, 255);
 }
 
 .header {
@@ -36,7 +36,7 @@ body {
   width: 240px;
   background:#fc0444;  
   position: absolute;
-  height: 100vh;
+  height: 100%;
   padding: 0 30px;
   left: -100%;
   transition: all 1s;
@@ -88,6 +88,14 @@ ul li a:hover, ul li a:active {
   color: #fc0444;
   background: #ffffff; 
 
+}
+
+.alllogout{
+  margin-bottom: 10px;
+  padding-bottom: 1000px;
+}
+.LogOutSize{
+  margin-top: 10px;
 }
 
 .main {
