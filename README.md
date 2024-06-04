@@ -122,7 +122,8 @@ http://127.0.0.1:5000/api
 # Results
 
 - Landing page and My Account Page
-![Screenshot 2024-06-04 074125](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/41a71009-46d3-49b9-b0cc-707e7b921970)
+![image](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/401168a2-7dc6-4205-886c-0256003fc48e)
+
 
 - Only those recent procedurres are being shown whose rating is less than three
 ![Screenshot 2024-06-04 074331](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/e7e882a9-c19b-4b3c-b501-e746cb3675dc)
