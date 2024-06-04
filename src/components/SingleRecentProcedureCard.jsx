@@ -1,9 +1,11 @@
 import React from 'react';
 import '../Styles/SingleRecentProcedureCard.css';
 import { FaStar, FaRegStar } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 export default function SingleRecentProcedureCard(props) {
     const { course } = props;
+    const navigate = useNavigate();
 
     const renderStars = (rating) => {
         const stars = [];
@@ -22,8 +24,12 @@ export default function SingleRecentProcedureCard(props) {
         return null;
     }
 
+    const handleClick = () => {
+        navigate(`/course/${course.courseid}`);
+    };
+
     return (
-        <div className='srpcard'>
+        <div className='srpcard' onClick={handleClick}>
             <div className='rpcicon-container '>
                 {renderStars(course.rating)}
             </div>

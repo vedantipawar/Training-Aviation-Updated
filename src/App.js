@@ -8,6 +8,8 @@ import MyAccount from './pages/MyAccount';
 import EmergencyProcedures from './pages/EmergencyProcedures';
 import CFI from './pages/CFI';
 import Scenarios from './pages/Scenarios';
+import CourseDetails from './pages/CourseDetails';
+
 
 function App() {
   const [showNav, setShowNav] = useState(false);
@@ -26,10 +28,11 @@ function App() {
 
         <div className={showNav ? 'main content-shift' : 'main'}>
           <Routes>
-            <Route path="/myaccount" element={<MyAccount />} />
+            <Route path="/" element={<MyAccount />} />
             <Route path="/emergencyprocedures" element={<EmergencyProcedures />} />
             <Route path="/scenarios" element={<Scenarios />} />
             <Route path="/cfi" element={<CFI />} />
+            <Route path="/course/:courseid" element={<CourseDetails />} />
           </Routes>
         </div>
       </Router>
