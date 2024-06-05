@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../Styles/CourseDetails.css';
-import { FaStar } from "react-icons/fa";
+import { FaStar, FaCircle } from "react-icons/fa";
 import { MdRadioButtonChecked } from "react-icons/md";
+import lockedIcon from '../images/LockedIcon.png';
+import { CircularProgressbarWithChildren,buildStyles } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 function CourseDetails() {
     const { courseid } = useParams();
@@ -32,23 +35,65 @@ function CourseDetails() {
         return stars;
     };
 
-    // Directs user to a new page after clicking on start button
     const handleStart = () => {
         console.log("Procedure has started!");
         navigate('/new-page');
     }
 
-    // Toggle active state of the radio button icon
-    const toggleActive = () => {
-        setIsActive(!isActive);
-    }
+    const [activeIcon, setActiveIcon] = useState(null);
+    const toggleActive = (icon) => {
+        setActiveIcon(icon === activeIcon ? null : icon);
+    };
 
     return (
         <div className="container">
             <div className="left-container">
-                <div onClick={toggleActive} className={`radio-icon ${isActive ? 'active' : ''}`}>
+                <div onClick={() => toggleActive(1)} className={`radio-icon ${activeIcon === 1 ? 'active' : ''}`} > 
+                    <div className='progressbar-container'>
+                        <CircularProgressbarWithChildren value={course ? course.completion : 0} 
+                            
+                            styles={buildStyles({
+                                textColor: "#000",
+                                pathColor: "#fe0143",
+                                trailColor: "#d1d1d1"
+                            })}
+                        >
+                            <FaCircle style={{ fontSize: '65px', marginBottom: 50}}  />
+                        </CircularProgressbarWithChildren>
+                    </div>                    
+
+                    <div className="stars-container">
+                        {course && renderStars(course.rating)}
+                    </div>
+                </div>
+                <div className='leftcontainertext'>{course && course.rpctitle}</div>
+                <div className='leftcontainertext'>{course && course.rpcsubtitle}</div>
+                <div 
+                    onClick={() => toggleActive(2)} 
+                    className={`radio-icon2 ${activeIcon === 2 ? 'active' : ''}`}>
+                        <div className='progressbar-container'>
+                        <CircularProgressbarWithChildren value={course ? course.completion : 0} 
+                            
+                            styles={buildStyles({
+                                textColor: "#000",
+                                pathColor: "#fe0143",
+                                trailColor: "#d1d1d1"
+                            })}
+                        >
+                            <FaCircle style={{ fontSize: '65px', marginBottom: 50}}  />
+                        </CircularProgressbarWithChildren>
+                    </div>  
+                    
+                </div>
+                <div 
+                    onClick={() => toggleActive(3)} 
+                    className={`radio-icon3 ${activeIcon === 3 ? 'active' : ''}`}
+                >
                     <MdRadioButtonChecked />
                 </div>
+                <div className='lockedIcon'>
+                    <img src={lockedIcon} alt="Locked Icon" />
+                </div> 
             </div>
             <div className="right-container">
                 <div className='textbox'>
