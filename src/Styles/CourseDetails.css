@@ -42,7 +42,6 @@ html, body {
 }
 
 .redstar, .greystar {
-    padding-top: 40px;
     height: 30px;
     width: 20px;
 }
@@ -84,6 +83,7 @@ html, body {
     margin-top: 20px;
     text-align: left;
 }
+
 .textbox {
     padding: 25px 40px;
     background-color: #ffffff;
@@ -155,21 +155,39 @@ html, body {
     color: #fe0143;
 }
 
-.stars-container {
-    position: absolute;
-    top: 13%; /* Adjust as needed to position below the icon */
-    left: 42%;
-    transform: translateX(-50%);
+.details-container {
     display: flex;
+    flex-direction: column;
+    align-items: center; /* Align contents to the right */
     justify-content: center;
-    width: 100%;
-    margin-top: 70px;
+    text-align: right; /* Align text to the right */
 }
 
-.leftcontainertext{
+.details-container-l {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align contents to the right */
+    justify-content: right;
+    text-align: center; /* Align text to the right */
+}
+.stars-container {
+    margin-bottom: -7px; /* Add some space between the stars and the titles */
+    padding-left: 40%;
+}
+
+.leftcontainertext {
     font-size: 2ch;
-    padding-left: 15%;
-    
+    padding-left: 40%;
+}
+
+.stars-container-l{
+    margin-bottom: -7px; /* Add some space between the stars and the titles */
+    padding-right: 7%;
+}
+
+.leftcontainertext-l {
+    font-size: 2ch;
+    padding-right: -9%;
 }
 
 .progressbar-container {
@@ -178,3 +196,29 @@ html, body {
     margin: 25px auto; /* Center align the progress bar */
     position: relative; /* Ensure the child elements are positioned relatively */
 }
+
+.course-item-1 {
+    position: absolute;
+    top: 50px;
+    left: 350px;
+}
+
+.course-item-2 {
+    position: absolute;
+    top: 500px;
+    left: 310px;
+}
+
+.course-item-3 {
+    position: absolute;
+    top: 210px;
+    left: 450px;
+}
+
+.course-item-4 {
+    position: absolute;
+    top: 390px;
+    left: 170px;
+}
+
+/* Add similar styles for other course IDs */

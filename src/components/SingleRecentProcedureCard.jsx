@@ -20,7 +20,7 @@ export default function SingleRecentProcedureCard(props) {
     };
 
     // Only render the card if the rating is less than 3
-    if (course.rating >= 3) {
+    if (course.rating >= 3 || course.status == 'Locked') {
         return null;
     }
 

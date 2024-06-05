@@ -2,34 +2,47 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../Styles/CourseDetails.css';
 import { FaStar, FaCircle } from "react-icons/fa";
-import { MdRadioButtonChecked } from "react-icons/md";
 import lockedIcon from '../images/LockedIcon.png';
-import { CircularProgressbarWithChildren,buildStyles } from 'react-circular-progressbar';
+import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 function CourseDetails() {
     const { courseid } = useParams();
     const [course, setCourse] = useState(null);
-    const [isActive, setIsActive] = useState(false);
+    const [activeCourseId, setActiveCourseId] = useState(courseid);
+    const [isActive, setIsActive] = useState(null);
+    const [courses, setCourses] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
         fetch('/courses.json')
             .then(response => response.json())
             .then(data => {
-                const courseData = data.find(course => course.courseid === courseid);
-                setCourse(courseData);
+                setCourses(data);
+                const initialCourse = data.find(course => course.courseid === courseid);
+                setCourse(initialCourse);
             })
             .catch(error => console.error('Error fetching course data:', error));
     }, [courseid]);
 
-    const renderStars = (rating) => {
+    useEffect(() => {
+        const selectedCourse = courses.find(course => course.courseid === activeCourseId);
+        setCourse(selectedCourse);
+    }, [activeCourseId, courses]);
+
+    const renderStars = (rating, status) => {
         const stars = [];
-        for (let i = 1; i <= 3; i++) {
-            if (i <= rating) {
-                stars.push(<FaStar key={i} className='redstar'/>); // Use filled star icon with unique key
-            } else {
-                stars.push(<FaStar key={i} className='greystar'/>); // Use outline star icon with unique key
+        if (status === 'UnLocked') {
+            for (let i = 1; i <= 3; i++) {
+                if (i <= rating) {
+                    stars.push(<FaStar key={i} className='redstar'/>);
+                } else {
+                    stars.push(<FaStar key={i} className='greystar'/>);
+                }
+            }
+        } else {
+            for (let i = 1; i <= 3; i++) {
+                stars.push(<FaStar key={i} className='greystar'/>);
             }
         }
         return stars;
@@ -38,69 +51,69 @@ function CourseDetails() {
     const handleStart = () => {
         console.log("Procedure has started!");
         navigate('/new-page');
-    }
-
-    const [activeIcon, setActiveIcon] = useState(null);
-    const toggleActive = (icon) => {
-        setActiveIcon(icon === activeIcon ? null : icon);
     };
+
+    const toggleActive = (courseId) => {
+        setActiveCourseId(courseId);
+        setIsActive(courseId);
+    };
+
+    const unlockedCourses = courses.filter(courseItem => courseItem.status === "UnLocked");
+    const lockedCourses = courses.filter(courseItem => courseItem.status === "Locked");
 
     return (
         <div className="container">
             <div className="left-container">
-                <div onClick={() => toggleActive(1)} className={`radio-icon ${activeIcon === 1 ? 'active' : ''}`} > 
-                    <div className='progressbar-container'>
-                        <CircularProgressbarWithChildren value={course ? course.completion : 0} 
-                            
-                            styles={buildStyles({
-                                textColor: "#000",
-                                pathColor: "#fe0143",
-                                trailColor: "#d1d1d1"
-                            })}
+                {unlockedCourses.map((courseItem) => (
+                    <div key={courseItem.courseid} className={`course-item course-item-${courseItem.courseid}`}>
+                        <div 
+                            onClick={() => toggleActive(courseItem.courseid)} 
+                            className={`radio-icon ${isActive === courseItem.courseid ? 'active' : ''}`}
                         >
-                            <FaCircle style={{ fontSize: '65px', marginBottom: 50}}  />
-                        </CircularProgressbarWithChildren>
-                    </div>                    
-
-                    <div className="stars-container">
-                        {course && renderStars(course.rating)}
+                            <div className='progressbar-container'>
+                                <CircularProgressbarWithChildren 
+                                    value={courseItem.completion} 
+                                    styles={buildStyles({
+                                        textColor: "#000",
+                                        pathColor: "#fe0143",
+                                        trailColor: "#d1d1d1"
+                                    })}
+                                >
+                                    <FaCircle style={{ fontSize: '65px', marginBottom: 50 }} />
+                                </CircularProgressbarWithChildren>
+                            </div>
+                        </div>
+                        <div className='details-container'>
+                            <div className="stars-container">
+                                {renderStars(courseItem.rating, courseItem.status)}
+                            </div>
+                            <div className='leftcontainertext'>{courseItem.rpctitle}</div>
+                            <div className='leftcontainertext'>{courseItem.rpcsubtitle}</div>
+                        </div>
                     </div>
-                </div>
-                <div className='leftcontainertext'>{course && course.rpctitle}</div>
-                <div className='leftcontainertext'>{course && course.rpcsubtitle}</div>
-                <div 
-                    onClick={() => toggleActive(2)} 
-                    className={`radio-icon2 ${activeIcon === 2 ? 'active' : ''}`}>
-                        <div className='progressbar-container'>
-                        <CircularProgressbarWithChildren value={course ? course.completion : 0} 
+                ))}
+                {lockedCourses.map((courseItem) => (
+                    <div key={courseItem.courseid} className={`course-item course-item-${courseItem.courseid}`}>
+                        <div className='lockedIcon'>
                             
-                            styles={buildStyles({
-                                textColor: "#000",
-                                pathColor: "#fe0143",
-                                trailColor: "#d1d1d1"
-                            })}
-                        >
-                            <FaCircle style={{ fontSize: '65px', marginBottom: 50}}  />
-                        </CircularProgressbarWithChildren>
-                    </div>  
-                    
-                </div>
-                <div 
-                    onClick={() => toggleActive(3)} 
-                    className={`radio-icon3 ${activeIcon === 3 ? 'active' : ''}`}
-                >
-                    <MdRadioButtonChecked />
-                </div>
-                <div className='lockedIcon'>
-                    <img src={lockedIcon} alt="Locked Icon" />
-                </div> 
+                            <img src={lockedIcon} alt="Locked Icon" />
+                        </div>
+                        <div className='details-container-l'>
+                            <div className="stars-container-l">
+                                {renderStars(courseItem.rating, courseItem.status)}
+                            </div>
+                            <div className='leftcontainertext-l'>{courseItem.rpctitle}</div>
+                            <div className='leftcontainertext-l'>{courseItem.rpcsubtitle}</div>
+                        </div>
+                    </div>
+                ))}
             </div>
             <div className="right-container">
                 <div className='textbox'>
                     {course ? (
                         <>
                             <div className="completion-stars">
-                                {renderStars(course.rating)}
+                                {renderStars(course.rating, course.status)}
                                 <span>{course.completion}%</span>
                             </div>
                             <div className='titlesize'>{course.rpctitle}</div>
