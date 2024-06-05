@@ -122,11 +122,14 @@ http://127.0.0.1:5000/api
 # Results
 
 - Landing page and My Account Page
-![image](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/f8507ada-29c9-4b9e-b35a-2003c273a4c8)
+![image](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/62e2c6c5-d40e-4c11-b23d-fde969f3a346)
+
 
 
 
 - Only those recent procedurres are being shown whose rating is less than three and whose status is Unlocked, because procedures cannot have stars
+- Also, the card are being coded dynamically, since in our databse there is only one course with less than 3 stars and and unlocked status, as the db increases with the required filter the cards, shown aill also increase.
+- 
 ![image](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/2f2e0ab0-c6b2-4afb-8550-384ca393ca90)
 
 
