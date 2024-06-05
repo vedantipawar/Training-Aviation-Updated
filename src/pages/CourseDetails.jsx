@@ -3,6 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import '../Styles/CourseDetails.css';
 import { FaStar, FaCircle } from "react-icons/fa";
 import lockedIcon from '../images/LockedIcon.png';
+import dashed1 from '../images/dashed1.png'
+import dashed3 from '../images/dashed3.png'
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
@@ -64,6 +66,9 @@ function CourseDetails() {
     return (
         <div className="container">
             <div className="left-container">
+                <img src={dashed1} className='dashed1' alt='dashed'/>
+                <img src={dashed3} className='dashed3' alt='dashed3'/>
+                <img src={dashed1} className='dashed2' alt='dashed2'/>
                 {unlockedCourses.map((courseItem) => (
                     <div key={courseItem.courseid} className={`course-item course-item-${courseItem.courseid}`}>
                         <div 

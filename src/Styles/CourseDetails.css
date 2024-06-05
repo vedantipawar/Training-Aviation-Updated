@@ -222,3 +222,29 @@ html, body {
 }
 
 /* Add similar styles for other course IDs */
+.dashed1{
+    position: absolute;
+    top: 100px; /* Adjust this value as needed */
+    left: 520px; /* Adjust this value as needed */
+    width: 100px; /* Adjust the width as needed */
+    height: 140px; 
+
+}
+
+.dashed2{
+    position: absolute;
+    top: 420px; /* Adjust this value as needed */
+    left: 460px; /* Adjust this value as needed */
+    width: 150px; /* Adjust the width as needed */
+    height: 110px; 
+
+}
+
+.dashed3{
+    position: absolute;
+    top: 300px; /* Adjust this value as needed */
+    left: 390px; /* Adjust this value as needed */
+    width: 150px; /* Adjust the width as needed */
+    height: 110px; 
+
+}
