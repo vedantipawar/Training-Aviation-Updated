@@ -24,7 +24,7 @@ html, body {
     flex: 1;
     padding-right: 40px;
     background-color: #d1d1d1; /* Optional: for better visibility */
-    align-items: flex-end; /* Align items to the right */
+    align-items: center; /* Align items to the right */
     text-align: right; /* Align text to the right */
 }
 
@@ -99,103 +99,19 @@ html, body {
     margin-top: 15px;
 }
 
-.circle i {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
+.radio-icon {
+    font-size: 7rem; /* Adjust the size as needed */
+    color: grey;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-top: -300px;
+    margin-left: 300px;
 }
 
-.locked .circle i {
-    color: black;
-}
-
-.rating i {
+.radio-icon:hover {
     color: red;
 }
 
-.locked .rating i {
-    color: #ccc;
-}
-
-.course-path {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 250px;
-}
-
-.course-step {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.course-step::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: -30px;
-    width: 2px;
-    height: 50px;
-    background-color: #ccc;
-    z-index: -1;
-}
-
-.course-step:last-child::after {
-    display: none;
-}
-
-.course-icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-}
-
-.circle {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #f00;
-    border: 5px solid #f00;
-    position: relative;
-    z-index: 1;
-}
-
-.locked-circle {
-    background-color: #ccc;
-}
-
-.start {
-    position: absolute;
-    top: -20px;
-    background: #000;
-    color: #fff;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.course-label {
-    margin-left: 20px;
-    text-align: left;
-}
-
-.rating {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 20px;
-    color: #000;
-}
-
-.course-name {
-    font-size: 18px;
-    color: #000;
-}
-
-.locked .course-name,
-.locked .rating {
-    color: #ccc;
+.radio-icon.active {
+    color: red;
 }

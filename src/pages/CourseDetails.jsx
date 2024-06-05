@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../Styles/CourseDetails.css';
-import { FaStar} from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
+import { MdRadioButtonChecked } from "react-icons/md";
 
 function CourseDetails() {
     const { courseid } = useParams();
     const [course, setCourse] = useState(null);
+    const [isActive, setIsActive] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -30,61 +32,22 @@ function CourseDetails() {
         return stars;
     };
 
-
     // Directs user to a new page after clicking on start button
     const handleStart = () => {
         console.log("Procedure has started!");
         navigate('/new-page');
     }
 
+    // Toggle active state of the radio button icon
+    const toggleActive = () => {
+        setIsActive(!isActive);
+    }
+
     return (
         <div className="container">
             <div className="left-container">
-                <h1>left container</h1>
-                <h1>Course Details for Course ID: {courseid}</h1>
-
-                <div className="course-step unlocked">
-                    <div className="course-icon">
-                        <span className="start">Start</span>
-                        <div className="circle"></div>
-                    </div>
-                    <div className="course-label">
-                        <span className="rating">
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                        </span>
-                        <span className="course-name">Engine Out in flight</span>
-                    </div>
-                </div>
-                <div className="course-step locked">
-                    <div className="course-icon">
-                        <div className="circle locked-circle">
-                            <i className="fas fa-lock"></i>
-                        </div>
-                    </div>
-                    <div className="course-label">
-                        <span className="rating">
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                        </span>
-                        <span className="course-name">Engine Fire In Flight</span>
-                    </div>
-                </div>
-                <div className="course-step locked">
-                    <div className="course-icon">
-                        <div className="circle locked-circle">
-                            <i className="fas fa-lock"></i>
-                        </div>
-                    </div>
-                    <div className="course-label">
-                        <span className="rating">
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                        </span>
-                        <span className="course-name">Electrical Fire In Flight</span>
-                    </div>
+                <div onClick={toggleActive} className={`radio-icon ${isActive ? 'active' : ''}`}>
+                    <MdRadioButtonChecked />
                 </div>
             </div>
             <div className="right-container">
