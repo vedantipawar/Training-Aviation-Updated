@@ -146,5 +146,5 @@ http://127.0.0.1:5000/api
 
 
 - Start acts as a button that leads to a new page.
-![Screenshot 2024-06-04 074408](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/6e214706-7aa0-4fd7-9813-e68bb82eb912)
+
 ![image](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/2457b6cd-aba7-46c0-8635-3e43d235ad59)
