@@ -122,18 +122,28 @@ http://127.0.0.1:5000/api
 # Results
 
 - Landing page and My Account Page
-![image](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/401168a2-7dc6-4205-886c-0256003fc48e)
+![image](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/f8507ada-29c9-4b9e-b35a-2003c273a4c8)
 
 
-- Only those recent procedurres are being shown whose rating is less than three
-![Screenshot 2024-06-04 074331](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/e7e882a9-c19b-4b3c-b501-e746cb3675dc)
+
+- Only those recent procedurres are being shown whose rating is less than three and whose status is Unlocked, because procedures cannot have stars
+![image](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/2f2e0ab0-c6b2-4afb-8550-384ca393ca90)
+
 
 ![image](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/642941d5-a412-4e28-a8ab-d8b01210f17a)
 
 - Recent procedure cards land on different page based on what was clicked.
-![Screenshot 2024-06-04 074350](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/4656e0a5-d635-4056-9aa5-9878337c2c6e)
+![image](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/7579053b-875d-453f-ba04-8c45ed7d5855)
 
-![image](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/d66084ca-1dda-4f6f-9c8a-4f76a8630006)
+-Upon hovering of clicking the button it turns red. Used circular progress bar with children to get the desired effect of getting progress of each procedure
+![image](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/7d4e399c-7bc4-452b-8d24-f9a8c377d626)
+
+-Now, upon clicking the nect button, the content changes accordingly
+![image](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/df4e72f3-5aec-4a9d-bba6-1fe764acf0f9)
+
+-Locked items cannot be selected
+![image](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/2cc011f0-b160-4dd5-b2ec-bcdf75eae462)
+
 
 - Start acts as a button that leads to a new page.
 ![Screenshot 2024-06-04 074408](https://github.com/vedantipawar/Training-Aviation-Updated/assets/51786206/6e214706-7aa0-4fd7-9813-e68bb82eb912)
